@@ -467,7 +467,7 @@ const abi = [
           },
           {
             internalType: "uint256",
-            name: "mintPrice",
+            name: "publicMintPrice",
             type: "uint256",
           },
           {
@@ -617,7 +617,7 @@ const abi = [
   },
   {
     inputs: [],
-    name: "mintPrice",
+    name: "publicMintPrice",
     outputs: [
       {
         internalType: "uint256",
