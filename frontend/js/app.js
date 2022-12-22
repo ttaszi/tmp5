@@ -306,7 +306,7 @@ async function mint() {
   mintButton.innerHTML = spinner;
 
   const amount = parseInt(document.getElementById("mintInput").value);
-  const value = BigInt (1);
+  const value = BigInt (1) * BigInt(amount);
   const publicMintActive = await contract.methods.mintingActive().call();
   const presaleMintActive = await contract.methods.presaleActive().call();
 
@@ -315,7 +315,7 @@ async function mint() {
     try {
       const mintTransaction = await contract.methods
         .mint(amount)
-        .send({ from: window.address, value: value.toString() });
+        .send({ from: window.address, value: value });
       if(mintTransaction) {
         if(chain === 'goerli') {
           const url = `https://goerli.etherscan.io/tx/${mintTransaction.transactionHash}`;
