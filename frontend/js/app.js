@@ -180,7 +180,7 @@ async function loadInfo() {
     subHeading.innerText = h2_presale_mint;
     
     try {
-      // CHECK IF WHITELISTED
+      // CHECK IF WHITELISTED 
       const merkleData = await fetch(
         `/.netlify/functions/merkleProof/?wallet=${window.address}&chain=${chain}&contract=${contractAddress}`
       );
